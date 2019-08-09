@@ -15,5 +15,6 @@ RUN yarn build
 
 # Stage1: based on Nginx
 FROM nginx:1.15
+EXPOSE 80
 COPY --from=builder /app/build/ /usr/share/nginx/html
 # COPY nginx.conf /etc/nginx/nginx.conf
