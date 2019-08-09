@@ -17,4 +17,5 @@ RUN yarn build
 FROM nginx:1.15
 EXPOSE 80
 COPY --from=builder /app/build/ /usr/share/nginx/html
+CMD ["nginx","-g","daemon off;"]
 # COPY nginx.conf /etc/nginx/nginx.conf
